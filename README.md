@@ -27,6 +27,7 @@ Rather than building dashboards for reporting alone, our objective was to create
 
 This document walks through the complete analytical journey—from understanding the business problem and preparing the data to designing the data model, developing DAX measures, building interactive dashboards, uncovering key insights, and providing actionable business recommendations.
 
+
 ## Business Problem
 
 Healthcare supply chains play a critical role in ensuring that essential medicines are available when and where they are needed. However, public hospitals across Nigeria continue to face operational challenges such as medicine shortages, delayed supplier deliveries, and pharmaceutical wastage caused by expired stock. These issues disrupt patient care, increase operational costs, and reduce the overall efficiency of healthcare delivery.
@@ -35,13 +36,14 @@ One of the biggest challenges is that healthcare data is often fragmented. Inven
 
 As a result, decision-makers struggle to answer critical business questions, such as:
 
-. Which hospitals are most at risk of medicine shortages?
-. Which medicines require immediate replenishment?
-. Which suppliers consistently deliver late?
-. How much inventory is lost due to expired medicines?
-. Where should procurement teams prioritize their efforts?
+- Which hospitals are most at risk of medicine shortages?
+- Which medicines require immediate replenishment?
+- Which suppliers consistently deliver late?
+- How much inventory is lost due to expired medicines?
+- Where should procurement teams prioritize their efforts?
 
 To address these challenges, the objective of this project was to develop an interactive Power BI solution that consolidates healthcare logistics data into a single decision-support platform. The dashboard enables healthcare administrators to monitor inventory levels, evaluate supplier performance, reduce pharmaceutical wastage, and support evidence-based procurement decisions.
+
 
 
 ## Project Objectives
@@ -50,24 +52,49 @@ The primary objective of this project was to develop an interactive Business Int
 
 Specifically, the dashboard was designed to:
 
-Monitor medicine shortages across hospitals.
-Track supplier delivery performance.
-Identify medicines requiring immediate replenishment.
-Measure pharmaceutical wastage caused by expired stock.
-Improve inventory visibility.
-Support procurement planning through data-driven insights.
+- Monitor medicine shortages across hospitals.
+- Track supplier delivery performance.
+- Identify medicines requiring immediate replenishment.
+- Measure pharmaceutical wastage caused by expired stock.
+- Improve inventory visibility.
+- Support procurement planning through data-driven insights.
+
 
 
 ## Business Questions
 
 Throughout the project, our analysis focused on answering the following questions:
 
-Which hospitals experience the highest medicine shortages?
-Which suppliers consistently deliver late?
-Which medicines expire most frequently?
-How much inventory is lost through wastage?
-Which products require immediate replenishment?
-Which hospitals should procurement teams prioritize?
+- Which hospitals experience the highest medicine shortages?
+- Which suppliers consistently deliver late?
+- Which medicines expire most frequently?
+- How much inventory is lost through wastage?
+- Which products require immediate replenishment?
+- Which hospitals should procurement teams prioritize?
+
+
+## Dataset Overview
+
+The project uses four years of healthcare logistics data covering hospitals, medicines, suppliers, inventory transactions, and medicine deliveries. The datasets were integrated into a relational data model to support efficient reporting and cross-functional analysis across procurement, inventory management, supplier performance, and pharmaceutical wastage.
+
+<img width="677" height="397" alt="image" src="https://github.com/user-attachments/assets/98bfe461-3b21-4262-a4c1-b9bb362726c9" />
+
+### Figure 1. Power BI relational data model used to support analytics and reporting.
+
+Working collaboratively, our team designed a relational data model in Power BI using a star schema approach. By connecting transactional fact tables with descriptive dimension tables, we created a model that supports efficient filtering, improves report performance, and provides a solid foundation for reusable DAX calculations and interactive dashboards.
+Working collaboratively, our team designed a relational data model in Power BI using a star schema approach. By connecting transactional fact tables with descriptive dimension tables, we created a model that supports efficient filtering, improves report performance, and provides a solid foundation for reusable DAX calculations and interactive dashboards.
+
+## Data Model Summary
+
+| **Table** | **Table Type** | **Purpose** | **Key Fields** |
+|------------|----------------|-------------|----------------|
+| **Inventory** | Fact Table | Stores medicine inventory movements, including opening stock, quantities received, dispensed, expired, and closing stock across hospitals. | InventoryID, HospitalID, MedicineID, QuantityReceived, QuantityDispensed, QuantityExpired, ClosingStock |
+| **Deliveries** | Fact Table | Records medicine deliveries, enabling supplier performance analysis by comparing expected and actual delivery dates. | DeliveryID, SupplierID, HospitalID, DeliveryDate, ExpectedDeliveryDate, ActualDeliveryDate, QuantityDelivered |
+| **Hospitals** | Dimension Table | Contains descriptive information about hospitals used for operational and capacity analysis. | HospitalID, HospitalName, HospitalType, State, BedCapacity, NumberOfDoctors, NumberOfPharmacists |
+| **Medicines** | Dimension Table | Stores medicine attributes such as category, dosage form, storage requirements, and unit cost. | MedicineID, MedicineName, Category, DosageForm, StorageType, ShelfLifeMonths, UnitCost |
+| **Suppliers** | Dimension Table | Contains supplier information used to evaluate delivery performance and procurement efficiency. | SupplierID, SupplierName, State, ContactPerson |
+| **Date Table** | Dimension Table | Provides calendar attributes to support time intelligence, trend analysis, and year-over-year reporting. | Date, Day, Month, Quarter, Year |
+| **Measures_DAX** | Measure Table | Contains reusable DAX measures used to calculate KPIs, business metrics, and analytical insights across the dashboards. | Average Delivery Delay, Supplier Delay %, Financial Wastage, Reorder Level, Stock Shortage Flag |
 
 
 
