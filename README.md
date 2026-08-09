@@ -188,5 +188,39 @@ The dashboards allow users to explore the data by factors such as **time, hospit
 
 
 
+### Executive Overview
 
+The Executive Overview provides a high-level view of the healthcare supply chain, bringing together inventory, wastage, stock availability, and operational indicators in one place.
+
+
+<img width="1260" height="720" alt="image" src="https://github.com/user-attachments/assets/18eb826a-53b7-41d5-893f-559b2cf1abbf" />
+
+
+A key finding is the **₦8.22bn total inventory value**, alongside **₦433m in expired medicine value** and a **4% expiry rate**, highlighting the scale of inventory being managed and the financial impact associated with medicine expiry.
+
+The dashboard also highlights **73 low-stock alerts**, while **13 hospitals are currently below their medicine reorder level**, indicating areas where procurement and inventory teams may need to prioritize attention.
+
+The inventory trend shows that quantities received generally remained above quantities dispensed across the period, with fluctuations over time. This provides visibility into inventory inflows relative to medicine utilization.
+
+
+
+### Supplier Performance
+
+The Supplier Performance dashboard evaluates delivery reliability across 2,000 recorded deliveries. **69% of deliveries were on time, while 31% experienced delays**, with an average delay of 2 days. Although 46% of deliveries arrived early, the delay rate highlights an opportunity to improve supplier reliability and delivery planning.
+
+The supplier performance ranking enables procurement teams to compare suppliers, while the storage-type analysis shows that ambient products accounted for the largest quantity delivered at **1.8M units**.
+
+<img width="1345" height="749" alt="image" src="https://github.com/user-attachments/assets/e7313432-c393-4be9-9bfa-846c21ecd705" />
+
+
+
+### Hospital Profile
+
+The Hospital Profile dashboard provides an overview of hospital capacity, workforce, patient volume, and medicine availability across **56 facilities**.
+
+The hospitals collectively support approximately **13M annual patients** with a total capacity of **33K beds**. However, **94.4% of hospitals are below the medicine reorder level**, highlighting a significant inventory replenishment challenge despite the available clinical workforce and hospital capacity.
+
+The workforce analysis provides additional context by showing the distribution of doctors and pharmacists across hospitals, helping decision-makers understand hospital capacity alongside medicine availability.
+
+<img width="1303" height="735" alt="image" src="https://github.com/user-attachments/assets/4eb65ed0-8a3e-4aa0-8951-b15f19be996b" />
 
